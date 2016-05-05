@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName">
+    <!-- ======================================================================== -->
+	<!-- data source -->
+	<!-- ======================================================================== -->
+	<bean id="sampleDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="maxActive" value="50" />
+        <property name="maxIdle" value="20" />
+        <property name="maxWait" value="5000" />
+		<property name="url" value="jdbc:mysql://ip:port/database?characterEncoding=GBK" />
+		<property name="username" value="******" />
+		<property name="password" value="******" />
+	</bean>
+
+    <!-- ======================================================================== -->
+    <!--  iBatis SQL map定义。                                                    		  -->
+    <!-- ======================================================================== -->
+    <bean id="sampleSqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+        <property name="dataSource" ref="sampleDataSource"/>
+        <property name="configLocation" value="classpath:bean/sample/sqlmap-config-sample.xml"/>
+    </bean>
+    
+    <!-- ======================================================================== -->
+    <!--  Ibatis接口。                                                    		  -->
+    <!-- ======================================================================== -->
+    <bean id="sampleUserDao" class="com.dreamsuan.dal.sample.dao.ibatis.IbatisSampleUserDao">
+		<property name="sqlMapClient">
+			<ref bean="sampleSqlMapClient" />
+		</property>
+	</bean>
+
+</beans>

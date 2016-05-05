@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="SampleUser">
+    <typeAlias alias="sampleUser" type="com.dreamsuan.dal.sample.dataobject.SampleUser" />
+
+    <select id="getSampleUserList" resultClass="sampleUser">
+   		<![CDATA[
+        	select 
+        		dict_id as userId,
+        		name as userName 
+        	from
+        		dwtdc.adm_dict
+        	where
+        		dict_id > 118
+        	limit 0, 20
+    	]]>
+    </select>
+</sqlMap>

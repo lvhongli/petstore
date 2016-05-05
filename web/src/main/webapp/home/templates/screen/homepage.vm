@@ -1,0 +1,9 @@
+$control.setTemplate("top")
+
+<table>
+	<tr align="center">
+		<td><br /><strong>"Welcome to Petstore!"</strong><br /></td>
+	</tr>
+</table>
+
+$control.setTemplate("bottom")

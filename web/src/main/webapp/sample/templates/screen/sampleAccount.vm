@@ -1,0 +1,23 @@
+<link href="$sampleContent.getURI('css/petstore-user.css')" rel="stylesheet" type="text/css">
+
+<table border="0" cellpadding="0" cellspacing="10" width="100%" class="box">
+	<tr align="center">
+		<td><strong>用户信息</strong><br /><hr/></td>
+	</tr>
+	#foreach($item in $!userList)
+	<tr align="center">
+		<td><table border="0" cellpadding="0" cellspacing="10" width="10">
+			<tr>
+				<td nowrap="nowrap">ID：</td>
+				<td width="100%">$item.userId</td>
+				<td class="errorMessage">&nbsp;</td>
+			</tr>
+			<tr>
+				<td nowrap="nowrap">NAME：</td>
+				<td width="100%">$item.userName</td>
+				<td class="errorMessage">&nbsp;</td>
+			</tr>
+		</table></td>
+	</tr>
+	#end
+</table>
