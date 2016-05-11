@@ -4,6 +4,9 @@ $control.setTemplate("top")
 	<tr align="center">
 		<td><br /><strong>"Welcome to Petstore!"</strong><br /></td>
 	</tr>
+	<tr align="center">
+		<td><br /><strong>$!path</strong><br /></td>
+	</tr>
 </table>
 
 $control.setTemplate("bottom")
